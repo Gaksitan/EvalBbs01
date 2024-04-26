@@ -3,8 +3,7 @@ package com.green.evalBbs.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.apache.ibatis.annotations.Param;
 
 import com.green.evalBbs.dto.EvalBbsDto;
 
@@ -15,7 +14,8 @@ public interface IEvalBbsDao {
 	
 	public void write(String title, String content, String writer, String regdate);
 	
+	public EvalBbsDto getDto(@Param("bno") String bno);
 	
-	
+	public void delete(@Param("bno") String bno);
 	
 }
