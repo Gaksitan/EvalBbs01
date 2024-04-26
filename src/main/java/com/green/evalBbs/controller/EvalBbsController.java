@@ -1,13 +1,13 @@
 package com.green.evalBbs.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.green.evalBbs.dao.IEvalBbsDao;
-
-import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class EvalBbsController {
@@ -21,7 +21,7 @@ public class EvalBbsController {
 	}
 	
 	@RequestMapping("/list")
-	public String list(HttpServletRequest request, Model model) {
+	public String list(Model model) {
 		
 		model.addAttribute("list", dao.getList());
 		
